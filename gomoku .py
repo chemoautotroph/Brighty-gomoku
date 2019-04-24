@@ -65,7 +65,12 @@ while not time_to_quit:
             intersection_position = [pos_position[i] * 25 for i in range(len(pos_position))]
             #print(intersection_position)
             if intersection_position in empty_intersection:
-                pygame.draw.circle(Screen, RED, intersection_position, 7, 0)
+                if n%2 == 0:
+                    n+=1
+                    pygame.draw.circle(Screen, RED, intersection_position, 7, 0)
+                elif n%2 == 1:
+                    n+=1
+                    pygame.draw.circle(Screen, GREEN, intersection_position, 7, 0)
     pygame.display.update()
     
     #获取鼠标位置 get mouse position          
